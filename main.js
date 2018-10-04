@@ -13,7 +13,18 @@ $(document).ready(function() {
     index++
     if (index > total - 1) index = 0
     slide()
-  }, 2000)
+  }, 4000)
 
+  $('#next').click(function() {
+    index++
+    if (index > total - 1) index = 0
+    slide()
+  })
+
+  $('#prev').click(function() {
+    index--
+    if (index < 0) index = total - 1
+    slide()
+  })
 })
 
