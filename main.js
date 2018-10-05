@@ -1,30 +1,31 @@
 $(document).ready(function() {
-  var index = 0,
-      items = $('.container div'),
-      total = items.length
-  
-  function slide() {
-    var item = $('.container div').eq(index)
-    items.hide()
-    item.css('display', 'block')
+
+  function slide(num) {
+    console.log($('.container').css('marginLeft'))
+    $('.container').animate({ marginLeft: num })
   }
 
   var autoslide = setInterval(function(){
-    index++
-    if (index > total - 1) index = 0
-    slide()
-  }, 4000)
+    if (parseInt($('.container').css('marginLeft')) <= -1600)
+      $('.container').css('marginLeft', '0px')
+    else
+      slide('-=400px')
+  }, 1000)
 
   $('#next').click(function() {
-    index++
-    if (index > total - 1) index = 0
-    slide()
+    if (parseInt($('.container').css('marginLeft')) <= -1600)
+      $('.container').css('marginLeft', '0px')
+    else
+      slide('-=400px')
+    clearInterval(autoslide)
   })
 
   $('#prev').click(function() {
-    index--
-    if (index < 0) index = total - 1
-    slide()
+    if (parseInt($('.container').css('marginLeft')) >= 0)
+      $('.container').css('marginLeft', '-1600px')
+    else
+      slide('+=400px')
+    clearInterval(autoslide)
   })
 })
 

@@ -10,25 +10,39 @@
       width: 70%;
       margin: 30px auto
     }
-    .container {
-      max-width: 400px;
+    
+    .main-container {
+      width: 400px;
+      overflow: hidden; 
       margin: 0 auto
     }
-    .container div {
-      display: none
+
+    .container {
+      width: 2000px;
+      margin: 0 auto
     }
+    
+    .container div {
+      float: left;
+      width: 400px
+    }
+    
     .container img {
       width: 100%
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div style="display:block"><img src="images/backend.png"></div>
-    <div><img src="images/frontend.png"></div>
-    <div><img src="images/hosting-web.png"></div>
-    <div><img src="images/javascript.png"></div>
+  <div class="main-container">
+    <div class="container">
+      <div><img src="images/backend.png"></div>
+      <div><img src="images/frontend.png"></div>
+      <div><img src="images/hosting-web.png"></div>
+      <div><img src="images/javascript.png"></div>
+      <div><img src="images/backend.png"></div>
+    </div>
   </div>
+
   <button id="prev">Prev</button>
   <button id="next">Next</button>
 
